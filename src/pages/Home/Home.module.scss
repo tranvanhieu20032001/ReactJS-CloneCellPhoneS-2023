@@ -1,0 +1,71 @@
+.topHome {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+    // height: 400px;
+
+    .banner {
+        display: grid;
+        gap: 10px;
+        grid-template-rows: repeat(3, 1fr);
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            max-height: 126px;
+            box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.1), 0 2px 6px 2px rgba(60, 64, 67, 0.15);
+        }
+    }
+}
+.brandBanner {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    img {
+        max-width: 100%;
+        border-radius: 10px;
+        max-height: 125px;
+        box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.1), 0 2px 6px 2px rgba(60, 64, 67, 0.15);
+    }
+}
+
+.techNews {
+    display: flex;
+    justify-content: space-between;
+
+    .news {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        flex-basis: 24%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.1), 0 2px 6px 2px rgba(60, 64, 67, 0.15);
+        text-decoration: none;
+        transition: ease 500ms;
+
+        .newsImg {
+            min-width: 100%;
+            border-radius: 15px 15px 0 0;
+            max-height: 160px;
+            box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.1), 0 2px 6px 2px rgba(60, 64, 67, 0.15);
+        }
+
+        .newsTitle {
+            font-weight: bold;
+            margin-top: 10px;
+            padding: 0 5px;
+            color: black;
+
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}

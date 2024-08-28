@@ -1,0 +1,134 @@
+.alertMsgsGroup {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-top: calc(var(--layout-header-height) + 50px);
+}
+
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 240px;
+    min-height: 60px;
+    background: #fff;
+    border: 1px solid #4fc1e9;
+    margin-bottom: 2rem;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    right: 0;
+    top: 10;
+    &.primary {
+        border: 1px solid #4fc1e9;
+        .icon {
+            background: #4fc1e9;
+        }
+        .close {
+            color: #4fc1e9;
+        }
+    }
+    &.warning {
+        border: 1px solid #fcbb42;
+        .icon {
+            background: #fcbb42;
+        }
+        .close {
+            color: #fcbb42;
+        }
+    }
+    &.success {
+        border: 1px solid #a0d468;
+        .icon {
+            background: #a0d468;
+        }
+        .close {
+            color: #a0d468;
+        }
+    }
+    &.fail {
+        border: 1px solid #da4453;
+        .icon {
+            background: #da4453;
+        }
+        .close {
+            color: #da4453;
+        }
+    }
+
+    .icon {
+        background: #4fc1e9;
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 1.6rem;
+        margin: 0;
+        margin-left: -1px;
+    }
+
+    .content {
+        flex: 6;
+        padding-left: 1.5rem;
+        margin: 0;
+        display: flex;
+        align-items: center;
+
+        p {
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    .close {
+        color: #4fc1e9;
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        transition: color 0.4s ease;
+        cursor: pointer;
+
+        .close-icon {
+            transition: color 0.4s ease;
+            &:hover {
+                color: darken(#4fc1e9, 30%);
+            }
+        }
+    }
+}
+
+.enter {
+    opacity: 0;
+}
+.enterActive {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+    animation: slideIn 1s ease-in-out;
+}
+.exit {
+    opacity: 1;
+}
+.exitActive {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+    animation: slideOut 1s ease-in-out;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(200px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(200px);
+    }
+}

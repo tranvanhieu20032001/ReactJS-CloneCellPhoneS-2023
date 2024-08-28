@@ -1,0 +1,262 @@
+.title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+
+    .rating {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-self: center;
+        gap: 3px;
+        font-size: 14px;
+        .icon {
+            color: #f59e0b;
+        }
+    }
+
+    .compareBtn {
+        padding: 2px 3px;
+        background-color: white;
+        outline: none;
+        border: 1px solid var(--primary-background-color);
+        color: var(--primary-background-color);
+        cursor: pointer;
+    }
+}
+hr {
+    margin: 10px 0 15px;
+    border: 2px solid #f5f5f5;
+}
+.container {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: calc(100% * 3 / 5) 1fr;
+
+    .leftBoxDetails {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .slideContent {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: 10px;
+            border: 1px solid #f3f4f6;
+            cursor: pointer;
+
+            // img {
+            //     border-radius: 10px;
+            // }
+
+            &.active {
+                border-color: black;
+            }
+
+            &:hover {
+                background-color: #f3f4f6;
+            }
+        }
+    }
+
+    .rigthBoxDetail {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .prices {
+            display: flex;
+            gap: 5px;
+            padding: 10px 5px;
+            background: #eeeeef;
+
+            .priceItem {
+                display: flex;
+                flex: 1;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                font-weight: 900;
+                font-size: 16px;
+                color: #4e4e4e;
+                background-color: #eeeeef;
+                padding: 5px;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: background-color 0.5s ease;
+
+                .icon {
+                    font-size: 33px;
+                    margin-right: 5px;
+                }
+
+                span {
+                    font-weight: 400;
+                    font-size: 13px;
+                    color: #4e4e4e;
+                }
+
+                &.active {
+                    border: 2px solid var(--primary-background-color);
+                    color: var(--primary-background-color);
+                    background-color: #f5f5f5;
+                    box-shadow: 0 4px 4px rgba(255, 0, 0, 0.15), 0 -1px 1px rgba(255, 0, 0, 0.15);
+
+                    &::after {
+                        border: 10px solid transparent;
+                        border-top-color: #fd2424;
+                        bottom: -20px;
+                        content: '';
+                        left: calc(50% - 5px);
+                        position: absolute;
+                    }
+                }
+
+                &:hover {
+                    background-color: white;
+                }
+            }
+
+            .oldPrice {
+                font-weight: 400;
+                font-size: 13px;
+                text-decoration: line-through;
+                color: #4e4e4e;
+            }
+        }
+
+        .peferential {
+            border: 1px solid #fee2e2;
+            border-radius: 10px;
+
+            .title {
+                font-size: 16px;
+                font-weight: 600;
+                color: red;
+                background-color: #fee2e2;
+                padding: 8px;
+                border-radius: 10px 10px 0 0;
+
+                .icon {
+                    font-size: 20px;
+                }
+            }
+
+            .details {
+                font-size: 15px;
+                font-weight: 450;
+                padding: 8px;
+                width: calc(100% - 25px);
+                .detailNumb {
+                    display: inline-table;
+                    height: 15px;
+                    width: 15px;
+                    color: #eeeeef;
+                    border-radius: 50%;
+                    font-size: 10px;
+                    background-color: #fd2424;
+                    text-align: center;
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        .groupBtns {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            .group {
+                display: flex;
+                gap: 10px;
+                .btn {
+                    border-radius: 10px;
+                    padding: 5px;
+                    color: #eeeeef;
+                    background-color: #2e7be1;
+                    font-size: 14px;
+                    font-weight: 400;
+                    text-align: center;
+                    cursor: pointer;
+                    flex-grow: 8;
+
+                    p:first-child {
+                        font-size: 16px;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                    }
+                }
+
+                &:first-child {
+                    .btn {
+                        background-color: #fd2424;
+                    }
+                    .btn:last-child {
+                        font-size: 25px;
+                        border: 2px solid #fd2424;
+                        color: #fd2424;
+                        background-color: white;
+                        p:last-child {
+                            font-size: 8px;
+                            font-weight: 500;
+                            flex-grow: 0;
+                        }
+                    }
+                }
+
+                &:nth-child(2) .btn {
+                    flex: 1;
+                }
+
+                &:last-child .btn {
+                    background-color: #f59e0b;
+                }
+            }
+        }
+    }
+}
+
+
+// CSS modal content
+.content {
+    width: 100%;
+
+    .description {
+        width: 100%;
+        text-align: left;
+        border-collapse: collapse;
+
+        tr:first-child {
+            td:first-child {
+                border-top-left-radius: 10px;
+            }
+            td:last-child {
+                border-top-right-radius: 10px;
+            }
+        }
+
+        tr:last-child {
+            td:first-child {
+                border-bottom-left-radius: 10px;
+            }
+            td:last-child {
+                border-bottom-right-radius: 10px;
+            }
+        }
+
+        tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+
+        tr td:first-child {
+            width: 30%;
+        }
+
+        td {
+            padding: 8px 12px;
+            font-size: 14px;
+        }
+    }
+}

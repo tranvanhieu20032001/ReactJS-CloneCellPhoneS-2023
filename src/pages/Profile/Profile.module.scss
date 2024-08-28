@@ -1,0 +1,120 @@
+.fa {
+    font-size: 23px;
+    color: #4a4a4a;
+}
+
+#fullname {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#phoneNumber {
+    color: #637381;
+    font-size: 14px;
+}
+
+.container {
+    display: flex;
+    /* align-items: center; */
+    justify-self: center;
+    max-width: 100%;
+}
+
+.container .sidebar {
+    width: 250px;
+    padding: 10px;
+    background-color: #f6fbfc;
+    border-radius: 15px;
+}
+
+.container .sidebar .menu .itemMenu {
+    display: flex;
+    align-items: center;
+}
+
+.container .sidebar .menu .itemMenu {
+    padding: 5px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.container .sidebar .menu .itemMenu:nth-child(2) {
+    background-color: #fee;
+    border: 0.5px solid #e11b1e;
+    border-radius: 10px;
+}
+
+.container .sidebar .menu .itemMenu:nth-child(2) .fa,
+.container .sidebar .menu .itemMenu:nth-child(2) > a {
+    color: #fd2424;
+}
+
+.container .sidebar .menu .itemMenu > a {
+    color: #686868;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0 0 0 10px;
+    text-decoration: none;
+}
+
+.container .pageContent {
+    width: 925px;
+    margin: 0 18px;
+}
+
+.container .pageContent .information {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+.container .pageContent .information .personalInformation {
+    display: flex;
+    padding: 10px;
+    background-color: white;
+}
+
+.personalInformation .image {
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #fff;
+    border: 1px solid #a83288;
+}
+
+.personalInformation .info {
+    display: flex;
+    padding: 5px 10px;
+    color: #a83288;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.edit > .fa {
+    font-size: 12px;
+}
+
+.container .pageContent .orderInformation {
+    text-align: center;
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(145, 158, 171, 0.239);
+}
+
+h3 {
+    padding: 10px 0;
+}
+
+.pageContent .history {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.pageContent .history > img {
+    height: 150px;
+}

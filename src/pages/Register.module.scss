@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.header {
+    font-size: 30px;
+    text-transform: capitalize;
+    color: var(--primary-background-color);
+}
+
+.form{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .button {
+        width: 100%;
+        background-color: var(--primary-background-color);
+        color: white;
+        font-size: 16px;
+        border-radius: 5px;
+        text-align: center;
+        font-weight: 500;
+        padding: 5px 0;
+        cursor: pointer;
+    }
+}
+
+.login{
+    font-size: 16px;
+    .link{
+        color: var(--primary-background-color);
+        font-weight: 500;
+        text-decoration: none;
+        
+    }
+}

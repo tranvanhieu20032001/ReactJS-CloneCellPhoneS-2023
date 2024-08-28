@@ -1,0 +1,51 @@
+.title {
+    margin-top: 30px;
+}
+
+.form {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .formGroup {
+        display: flex;
+        gap: 20px;
+    }
+}
+
+.blockWrapper {
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid rgba(145, 158, 171, 0.239);
+    .buttonDropdown {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+        padding: 1px 6px;
+        cursor: pointer;
+        color: #919eab;
+    }
+
+    .deliveriTabs {
+        display: flex;
+        align-items: center;
+        background-color: white;
+
+        .deliveriTab {
+            background-color: #f1f1f1;
+            display: flex;
+            align-items: center;
+            padding: 15px 0 15px 20px;
+            font-size: 15px;
+            color: #919eab;
+            flex-basis: 50%;
+            cursor: pointer;
+
+            &.active {
+                background-color: white;
+            }
+        }
+    }
+}
+

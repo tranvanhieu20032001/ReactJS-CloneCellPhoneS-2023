@@ -1,0 +1,45 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+
+    .title {
+        font-size: 18px;
+        color: #4a4a4a;
+        font-weight: 700;
+    }
+
+    .bannerSlider {
+        display: flex;
+        justify-content: space-around;
+
+        .banner {
+            display: flex;
+            width: 595px;
+            height: 100px;
+            gap: unset;
+            overflow: hidden;
+            border-radius: 10px;
+
+            img {
+                min-width: 100%;
+            }
+        }
+    }
+
+    .btnList{
+        display: flex;
+        justify-content: flex-start;
+        column-gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .products{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: stretch;
+        gap: 10px;
+        justify-content: flex-start;
+    }
+}

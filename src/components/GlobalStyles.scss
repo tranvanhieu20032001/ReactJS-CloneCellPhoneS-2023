@@ -1,0 +1,27 @@
+@import '~normalize.css/normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-background-color: #e3007b;
+    --layout-width-content: 1200px;
+
+    --layout-header-height: 64px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1em;
+    line-height: 1.5;
+    font-weight: 400;
+    width: 100%;
+}
