@@ -16,6 +16,7 @@
 
 html {
     font-size: 62.5%;
+    overflow-x: hidden;
 }
 
 body {
@@ -24,4 +25,17 @@ body {
     line-height: 1.5;
     font-weight: 400;
     width: 100%;
+}
+
+/* media queries */
+@media(max-width:1024px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media(max-width:450px) {
+    html {
+        font-size: 50%;
+    }
 }

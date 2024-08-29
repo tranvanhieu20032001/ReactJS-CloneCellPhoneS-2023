@@ -6,11 +6,19 @@
     &.modal {
         position: absolute;
         left: calc(calc(100% - var(--layout-width-content)) / 2);
-        top: calc(var(--layout-header-height) + 35px);
+        top: calc(var(--layout-header-height) + 55px);
         max-height: 410px;
-        // z-index: 989;
     }
-} 
+
+    @media(max-width:1024px) {
+        &.modal {
+            position: absolute;
+            left: 5px;
+            top: calc(var(--layout-header-height) + 55px);
+            max-height: 410px;
+        }
+    }
+}
 
 .container {
     width: 100%;
@@ -55,5 +63,23 @@
 
     strong:hover {
         color: var(--primary-background-color);
+    }
+}
+
+@media(max-width:1024px) {
+    .wrapper {
+        &.modal {
+            position: absolute;
+            left: 5px;
+            top: calc(var(--layout-header-height) + 55px);
+            max-height: 410px;
+        }
+    }
+}
+
+
+@media(max-width:450px) {
+    .wrapper {
+        // display: none;
     }
 }

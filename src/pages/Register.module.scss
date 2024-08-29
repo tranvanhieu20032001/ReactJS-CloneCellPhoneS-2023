@@ -12,7 +12,7 @@
     color: var(--primary-background-color);
 }
 
-.form{
+.form {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -31,12 +31,17 @@
     }
 }
 
-.login{
+.login {
     font-size: 16px;
-    .link{
+
+    .link {
         color: var(--primary-background-color);
         font-weight: 500;
         text-decoration: none;
-        
+
     }
+}
+
+.title {
+    text-align: center;
 }

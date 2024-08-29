@@ -28,7 +28,7 @@ function Footer(props) {
                     <div className={clsx(styles.content)}>
                         <p className={clsx(styles.title)}>Phương thức thanh toán</p>
                         <ul className={clsx(styles.linkList, styles.icons)}>
-                            {Object.keys(paymentIcons).map((key, index) => {
+                            {Object.keys(paymentIcons).slice(0, 4).map((key, index) => {
                                 return (
                                     <li key={index} className={clsx(styles.link)}>
                                         <Link>
@@ -113,7 +113,7 @@ function Footer(props) {
                 </div>
                 <div className={clsx(styles.boxInfor)}>
                     <div className={clsx(styles.content)}>
-                        <p className={clsx(styles.title)}>Kết nối với Cellphones</p>
+                        <p className={clsx(styles.title)}>Kết nối với Chúng tôi</p>
                         <ul className={clsx(styles.linkList, styles.icons)} style={{ justifyContent: 'space-between' }}>
                             <li className={clsx(styles.link)}>
                                 <Link>
@@ -141,47 +141,6 @@ function Footer(props) {
                                 </Link>
                             </li>
                         </ul>
-                    </div>
-                    <div className={clsx(styles.content)}>
-                        <p className={clsx(styles.title)}>Website thành viên</p>
-                        <ul className={clsx(styles.linkList)}>
-                            <li className={clsx(styles.link)}>
-                                <p>Hệ thống bảo hành sửa chữa Điện thoại - Máy tính</p>
-                                <img src={webIcons.dienthoaivui} alt="" />
-                            </li>
-                            <li className={clsx(styles.link)}>
-                                <p>Trung tâm bảo hành uỷ quyền Apple</p>
-                                <img src={webIcons.cares} alt="" />
-                            </li>
-                            <li className={clsx(styles.link)}>
-                                <p>Kênh thông tin giải trí công nghệ cho giới trẻ</p>
-                                <img src={webIcons.schannel} alt="" />
-                            </li>
-                            <li className={clsx(styles.link)}>
-                                <p>Trang thông tin công nghệ mới nhất</p>
-                                <img src={webIcons.sforum} alt="" />
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div className={clsx(styles.botFooter)}>
-                <div className={clsx(styles.container)}>
-                    <div className={styles.boxInfor}>
-                        <p>Điện thoại - Điện thoại iPhone - Điện thoại iPhone 14</p>
-                        <p>Điện thoại iPhone 15 - Điện thoại iPhone 15 Pro</p>
-                    </div>
-                    <div className={styles.boxInfor}>
-                        <p>Điện thoại Vivo - Điện thoại OPPO - Điện thoại Samsung</p>
-                        <p>Back to school - Điện thoại Samsung S23 Ultra</p>
-                    </div>
-                    <div className={styles.boxInfor}>
-                        <p>Máy tính Laptop - Laptop Acer - Laptop ASUS </p>
-                        <p>Máy tính để bàn - Tivi - Tivi Samsung - Sim số đẹp</p>
-                    </div>
-                    <div className={styles.boxInfor}>
-                        <p>Máy hút bụi - Máy hút bụi cầm tay - Robot hút bụi Ecovas</p>
-                        <p>Máy lọc không khí - Máy lọc không khí Samsung</p>
                     </div>
                 </div>
             </div>

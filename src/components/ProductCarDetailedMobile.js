@@ -5,12 +5,11 @@ import { useState, forwardRef } from 'react';
 // icon
 import { AiFillStar, AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 
-import styles from './ProductCardDetailed.module.scss';
+import styles from './ProductCardDetailedMobile.module.scss';
 import { formatCash } from '../utils/helpers';
 
-const ProductCardDetailed = forwardRef((props, ref) => {
+const ProductCardDetailedMobile = forwardRef((props, ref) => {
     const { item = null } = props;
-    const [isHoverWishListBtn, setIsHoverWishListBtn] = useState(false);
 
     let isPreferential = false;
     let isSaleOff = false;
@@ -75,4 +74,4 @@ const ProductCardDetailed = forwardRef((props, ref) => {
     );
 });
 
-export default ProductCardDetailed;
+export default ProductCardDetailedMobile;

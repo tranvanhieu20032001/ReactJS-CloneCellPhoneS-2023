@@ -4,7 +4,8 @@
     align-items: center;
     position: relative;
     width: 100%;
-    &.backgroundGray{
+
+    &.backgroundGray {
         background-color: #f4f6f8;
     }
 }
@@ -27,6 +28,7 @@
     color: aliceblue;
     background-color: rgba(215, 0, 24, 0.7);
     cursor: pointer;
+
     .icon {
         font-size: 15px;
     }
@@ -34,9 +36,17 @@
 
 .container {
     min-height: 1000px;
-    width: var(--layout-width-content);
+    max-width: var(--layout-width-content);
+    width: 100%;
+
     // background-color: #ccc;
     .content {
-        margin-top: calc(var(--layout-header-height) + 35px);
+        margin-top: 15px;
+    }
+}
+
+@media(max-width:1024px) {
+    .container {
+        padding: 0 15px;
     }
 }

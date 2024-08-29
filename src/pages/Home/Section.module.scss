@@ -8,8 +8,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        
-        h2{
+
+        h2 {
             text-transform: uppercase;
         }
 
@@ -28,6 +28,29 @@
 
                 &:hover {
                     opacity: 0.9;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:450px) {
+    .wrapper {
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            flex-direction: column;
+            overflow-x: scroll;
+            padding: 10px 0;
+
+            .producers {
+                display: flex;
+                gap: 10px;
+
+                .producer {
+                    font-size: 12px;
+                    width: max-content;
                 }
             }
         }

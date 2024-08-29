@@ -16,8 +16,36 @@ import Section from './Section';
 import Categories from './Categories';
 import ProductCardDetailed from '../../components/ProductCardDetailed';
 import SlideScrollable from '../../components/SlideScrollable';
+import { useEffect, useState } from 'react';
+import ProductCardDetailedMobile from '../../components/ProductCarDetailedMobile';
 
 function HomePage() {
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 796);
+    useEffect(() => {
+        const handleResize = () => {
+            console.log('window.innerWidth:', window.innerWidth);
+            setIsMobile(window.innerWidth < 796);
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+    console.log('isMobile:', isMobile);
+    const [paginationState, setPaginationState] = useState({});
+
+    const itemsPerPage = 10;
+
+    const getCurrentPage = (brandKey) => paginationState[brandKey]?.currentPage || 1;
+
+    //cập nhật currentPage của từng brand
+    const updatePageForBrand = (brandKey, newPage) => {
+        setPaginationState((prevState) => ({
+            ...prevState,
+            [brandKey]: { currentPage: newPage },
+        }));
+    };
     return (
         <div className={clsx(styles.wrapper)}>
             <section className={clsx(styles.topHome)}>
@@ -37,25 +65,65 @@ function HomePage() {
                     })}
                 </div>
             </section>
-            {Object.keys(brands).map((key, index) => {
+            {Object.keys(brands).map((brandKey, index) => {
+                const currentPage = getCurrentPage(brandKey);
+                const indexOfLastItem = currentPage * itemsPerPage;
+                const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+                const currentItems = productItems.slice(indexOfFirstItem, indexOfLastItem);
+                const totalPages = Math.ceil(productItems.length / itemsPerPage);
+
+                const handlePrevPage = () => {
+                    if (currentPage > 1) {
+                        updatePageForBrand(brandKey, currentPage - 1);
+                    }
+                };
+
+                const handleNextPage = () => {
+                    if (currentPage < totalPages) {
+                        updatePageForBrand(brandKey, currentPage + 1);
+                    }
+                };
+
                 return (
-                    <Section key={index} type={key} data={brands[key]}>
-                        <SlideScrollable
-                            slideShowItemLength={Math.round(productItems.length / 2 - 5)}
-                            translatePercent={20}
-                            scrollable={true}
-                            settingSlideLayout={{
-                                maxHeight: 926,
-                                display: 'flex',
-                                flexFlow: 'column wrap',
-                                gap: 10,
-                                padding: '0 5px',
-                            }}
-                        >
-                            {productItems.map((item, index) => {
-                                return <ProductCardDetailed item={item} key={index} />;
-                            })}
-                        </SlideScrollable>
+                    <Section key={index} type={brandKey} data={brands[brandKey]}>
+                        {!isMobile && (
+                            <SlideScrollable
+                                slideShowItemLength={Math.round(productItems.length / 2 - 5)}
+                                translatePercent={20}
+                                scrollable={true}
+                                settingSlideLayout={{
+                                    maxHeight: 926,
+                                    display: 'flex',
+                                    flexFlow: 'column wrap',
+                                    gap: 10,
+                                    padding: '0 5px',
+                                }}
+                            >
+                                {productItems.map((item, index) => (
+                                    <ProductCardDetailed item={item} key={index} />
+                                ))}
+                            </SlideScrollable>
+                        )}
+                        {isMobile && (
+                            <>
+                                <div className={clsx(styles.wrapperProduct)}>
+                                    {currentItems.map((item, index) => (
+                                        <ProductCardDetailedMobile item={item} key={index} />
+                                    ))}
+                                </div>
+                                <div className={clsx(styles.pagination)}>
+                                    <button onClick={handlePrevPage} disabled={currentPage === 1}>
+                                        Previous
+                                    </button>
+                                    <span>
+                                        Page {currentPage} of {totalPages}
+                                    </span>
+                                    <button onClick={handleNextPage} disabled={currentPage === totalPages}>
+                                        Next
+                                    </button>
+                                </div>
+                            </>
+                        )}
                     </Section>
                 );
             })}
@@ -91,7 +159,6 @@ function HomePage() {
                     })}
                 </div>
             </Section>
-
             <Section type={''} data={[]} title={'tin công nghệ'}>
                 <div className={clsx(styles.techNews)}>
                     {images.techNews.map((news, index) => {

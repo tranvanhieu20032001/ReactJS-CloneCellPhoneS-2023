@@ -3,11 +3,10 @@ import { Link, useLocation, useParams } from 'react-router-dom';
 import { useState } from 'react';
 
 // icon
-import { BiSearchAlt2 } from 'react-icons/bi';
-import { SlBag, SlLocationPin } from 'react-icons/sl';
+import { SlLocationPin } from 'react-icons/sl';
 import { CiSearch } from "react-icons/ci";
 import { LuMenuSquare } from 'react-icons/lu';
-import { HiOutlineUserCircle, HiOutlinePhone, HiOutlineTruck } from 'react-icons/hi2';
+import { HiOutlineUserCircle, HiOutlinePhone } from 'react-icons/hi2';
 import { IoIosArrowDown, IoIosArrowForward } from 'react-icons/io';
 import { FaHouse } from 'react-icons/fa6';
 
@@ -15,6 +14,7 @@ import { FaHouse } from 'react-icons/fa6';
 import styles from './Header.module.scss';
 import images from '../assets/img';
 import Catalog from './Catalog';
+import catalogItems from '../constants/catalogItems';
 import { IoBagHandleSharp, IoLogoElectron } from 'react-icons/io5';
 
 function Header() {
@@ -35,12 +35,6 @@ function Header() {
                     <Link to="/">
                         <img src={images.logo} alt="logo" />
                     </Link>
-                    {/* <div
-                        className={clsx(styles.menuButton, styles.btn)}
-                        onClick={handleShowCatalog}
-                    >
-                        <LuMenuSquare className={clsx(styles.icon)} /> Danh mục
-                    </div> */}
                     <Link to="/">
                         <div className={clsx(styles.contactButton)}>
                             <HiOutlinePhone className={clsx(styles.icon)} />
@@ -67,6 +61,13 @@ function Header() {
                             <span>Giỏ hàng</span>
                         </div>
                     </Link>
+                    <div
+                        className={clsx(styles.menuButton, styles.btn)}
+                        onClick={handleShowCatalog}
+                    >
+                        <LuMenuSquare className={clsx(styles.icon)} />
+                    </div>
+
                     <form>
                         <div className={clsx(styles.searchBar)}>
                             <input className={clsx(styles.inputGroupBtn)} placeholder="Bạn cần tìm gì?"></input>
@@ -83,11 +84,21 @@ function Header() {
                     </Link>
                 </nav>
             </header>
-            <div
-                // className={clsx(styles.menuButton, styles.btn)}
-                onClick={handleShowCatalog}
-            >
-                <LuMenuSquare className={clsx(styles.icon)} /> Danh mục
+
+            <div className={clsx(styles.wrappermenu)}>
+                <div className={clsx(styles.headermenu, styles.container)}>
+                    <div onClick={handleShowCatalog} className={clsx(styles.category)}><LuMenuSquare className={clsx(styles.icon)} /> Danh mục</div>
+                    <ul className={clsx(styles.mainmenu)}>
+                        {catalogItems.slice(0, 9).map((item, index) => {
+                            const Icon = item.icon;
+                            return (
+                                <li key={index}>
+                                    {item.text}
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </div >
             </div>
             {products || brand ? (
                 <div className={clsx(styles.breadcrumb)}>
@@ -153,13 +164,16 @@ function Header() {
                         })}
                     </div>
                 </div>
-            ) : null}
+            ) : null
+            }
 
-            {showCatalogModal ? (
-                <div className={clsx(styles.catalogDropDownModal)} onClick={handleShowCatalog}>
-                    <Catalog isDropDown={showCatalogModal} />
-                </div>
-            ) : null}
+            {
+                showCatalogModal ? (
+                    <div className={clsx(styles.catalogDropDownModal)} onClick={handleShowCatalog}>
+                        <Catalog isDropDown={showCatalogModal} />
+                    </div>
+                ) : null
+            }
         </>
     );
 }

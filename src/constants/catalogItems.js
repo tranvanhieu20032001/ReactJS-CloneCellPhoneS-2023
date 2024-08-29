@@ -9,7 +9,7 @@ import { AiOutlineNotification } from 'react-icons/ai';
 
 const catalogItems = [
     {
-        text: 'Điện thoại, Tablet',
+        text: 'Điện thoại',
         icon: IoPhonePortraitOutline,
         data: [
             {
@@ -200,7 +200,7 @@ const catalogItems = [
         ],
     },
     {
-        text: 'Đồng hồ, Camera',
+        text: 'Đồng hồ',
         icon: IoWatchOutline,
         data: [
             {
@@ -250,7 +250,7 @@ const catalogItems = [
         ],
     },
     {
-        text: 'Gia dụng, Smarthome',
+        text: 'Smarthome',
         icon: RiHomeGearFill,
         data: [
             {
@@ -399,7 +399,7 @@ const catalogItems = [
         ],
     },
     {
-        text: 'PC, Màn hình',
+        text: 'PC',
         icon: FaComputer,
         data: [
             {

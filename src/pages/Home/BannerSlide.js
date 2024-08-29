@@ -35,7 +35,7 @@ function BannerSlide() {
                 <div className={clsx(styles.slideContents)}>
                     <SlideScrollable
                         slideShowItemLength={slideShowItems.length - 1}
-                        translatePercent={20}
+                        translatePercent={33}
                         showBtn={false}
                         scrollable={true}
                         forceTranslateTo={slideIndex}
